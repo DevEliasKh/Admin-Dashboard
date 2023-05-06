@@ -129,5 +129,49 @@ table {
 
 body {
 	display: grid;
-	grid-template: ;
+	grid-template: 2fr 4fr /2fr 4fr;
+	grid-template-areas:
+		'sidebar header'
+		'sidebar main';
+	width: 100vw;
+	height: 100vh;
+	gap: 10px;
+}
+
+header {
+	grid-area: header;
+
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		'search'
+		'tools';
+	gap: 10px;
+}
+
+.header-search {
+	grid-area: search;
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+}
+
+.header-tools {
+	grid-area: tools;
+	display: grid;
+	grid-auto-flow: column;
+	gap: 10px;
+	align-items: center;
+}
+
+.header-tools > div {
+	justify-self: start;
+}
+
+nav {
+	grid-area: sidebar;
+}
+
+main {
+	grid-area: main;
 }
