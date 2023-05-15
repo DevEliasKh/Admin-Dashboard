@@ -1,3 +1,7 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Slab&display=swap');
+
 /* reset CSS */
 
 html,
@@ -128,8 +132,10 @@ table {
 /* CSS start here */
 
 body {
+	font-family: 'Roboto', sans-serif;
+
 	display: grid;
-	grid-template: 2fr 4fr /2fr 4fr;
+	grid-template: 1fr 4fr /1fr 4fr;
 	grid-template-areas:
 		'sidebar header'
 		'sidebar main';
@@ -170,8 +176,48 @@ header {
 
 nav {
 	grid-area: sidebar;
+	background-color: #0ea5e9;
+	color: white;
+	font-weight: bold;
+	font-size: 1.4em;
+	padding-left: 20px;
+	padding-top: 20px;
+
+	display: grid;
+	align-content: start;
+	gap: 50px;
+}
+
+nav ul li {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: start;
+	align-items: end;
+	gap: 10px;
+
+	margin-bottom: 10px;
+}
+
+.dashboard-icon {
+	font-size: 1.8em;
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: start;
+	align-items: center;
+	gap: 10px;
+}
+
+.dashboard-icon > svg {
+	width: 60px;
 }
 
 main {
 	grid-area: main;
+	background-color: #d4d4d4;
+}
+
+svg {
+	width: 30px;
+	height: auto;
+	fill: #fff;
 }
