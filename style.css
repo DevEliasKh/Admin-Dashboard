@@ -135,13 +135,13 @@ body {
 	font-family: 'Roboto', sans-serif;
 
 	display: grid;
-	grid-template: 1fr 4fr /1fr 4fr;
+	grid-template: 1fr 5fr /1fr 5fr;
 	grid-template-areas:
 		'sidebar header'
 		'sidebar main';
 	width: 100vw;
 	height: 100vh;
-	gap: 10px;
+	/* gap: 10px; */
 }
 
 header {
@@ -152,7 +152,8 @@ header {
 	grid-template-areas:
 		'search'
 		'tools';
-	gap: 10px;
+
+	height: 200px;
 }
 
 .header-search {
@@ -160,6 +161,31 @@ header {
 	display: grid;
 	grid-auto-flow: column;
 	align-items: center;
+	justify-content: space-between;
+	padding-left: 20px;
+}
+
+.header-search svg {
+	fill: #000;
+}
+
+.header-search input {
+	background-color: #d4d4d4;
+	border: none;
+	border-radius: 10px;
+	height: 2em;
+	width: 40vw;
+	margin-right: 18vw;
+}
+
+.header-search .user-name {
+	font-weight: 800;
+	margin-right: 20px;
+}
+
+.header-search .avatar {
+	border-radius: 100%;
+	width: 4em;
 }
 
 .header-tools {
@@ -168,12 +194,47 @@ header {
 	grid-auto-flow: column;
 	gap: 10px;
 	align-items: center;
+	/* margin-right: 20px; */
+	padding: 0 20px 20px 20px;
 }
 
 .header-tools > div {
 	justify-self: start;
 }
 
+.header-tools .avatar {
+	border-radius: 100%;
+	width: 6em;
+}
+
+.header-tools div span {
+	font-weight: 800;
+}
+
+.buttons {
+	width: 100%;
+	display: grid;
+	grid-auto-flow: column;
+	gap: 3em;
+	justify-content: end;
+}
+
+.header-tools .buttons button {
+	background-color: #0ea5e9;
+	border: none;
+	color: #fff;
+	font-weight: 800;
+	border-radius: 2em;
+	height: 3em;
+	width: 8em;
+}
+
+.info {
+	display: grid;
+	grid-auto-flow: column;
+	align-items: center;
+	gap: 30px;
+}
 nav {
 	grid-area: sidebar;
 	background-color: #0ea5e9;
@@ -214,10 +275,52 @@ nav ul li {
 main {
 	grid-area: main;
 	background-color: #d4d4d4;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas: 'project other';
 }
 
 svg {
 	width: 30px;
 	height: auto;
 	fill: #fff;
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 800;
+	padding: 20px;
+}
+
+.project {
+	grid-area: project;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 30px;
+
+	padding: 20px;
+}
+
+.project > .item {
+	background-color: #fff;
+	border-left: orange 5px solid;
+	border-radius: 8px;
+	display: grid;
+	padding: 10px;
+}
+
+.project .item .icons {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: end;
+	gap: 10px;
+}
+
+.project .item svg {
+	fill: #000;
+}
+
+.trending div img {
+	width: 4em;
 }
